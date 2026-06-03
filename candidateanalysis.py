@@ -41,7 +41,7 @@ def candidate_analysis():
     plt.show()
     print(" Graph 4 saved → graphs/04agedistribution.png")
 
-    # ── GRAPH 5: Education — Winners vs Losers
+    
     print("\nGenerating Graph 5 - Education of winners vs losers...")
     edu_winner = winners['EDUCATION'].value_counts().head(6)
     edu_loser  = losers['EDUCATION'].value_counts().head(6)

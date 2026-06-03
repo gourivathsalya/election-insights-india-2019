@@ -11,13 +11,13 @@ def voter_turnout_analysis():
 
     df = pd.read_csv('data/cleaned_election_data.csv')
 
-    # Find the turnout column
+    
     turnout_col = [c for c in df.columns if 'TOTAL ELECTORS' in c and 'OVER' in c][0]
 
-    # Average turnout per state
+    
     state_turnout = df.groupby('STATE')[turnout_col].mean().sort_values(ascending=False)
 
-    # ── GRAPH 6: Voter turnout by state
+    
     print("\nGenerating Graph 6 - Voter turnout by state...")
     plt.figure(figsize=(14, 10))
     colors = ['#2ecc71' if v >= state_turnout.mean() else '#e74c3c' for v in state_turnout.values]
@@ -32,7 +32,7 @@ def voter_turnout_analysis():
     plt.show()
     print(" Graph 6 saved → graphs/06voterturnout.png")
 
-    # ── GRAPH 7: Top 5 highest and lowest turnout
+    
     print("\nGenerating Graph 7 - Turnout extremes...")
     fig, axes = plt.subplots(1, 2, figsize=(14, 6))
 
